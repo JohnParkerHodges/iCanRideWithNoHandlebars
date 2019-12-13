@@ -1,0 +1,29 @@
+ <div class="contianer">
+     <div class="row">
+         <div class="col">
+             {{#each burger}}
+                {{#unless devoured}}
+                    <p>{{burger_name}}<button  class= "ml-3" onclick="Eaten({{id}})">devour</button></p>
+                    
+                {{/unless}}
+             {{/each}}
+         </div>
+         <div class="col">
+             {{#each burger}}
+                {{#if devoured}}
+                <p>{{burger_name}}</p>
+                {{/if}}
+             {{/each}}
+
+         </div>
+     </div>
+     <div class="row">
+         <div class="col">
+             <form id="NewBurger">
+                 Burger Name: <br>
+                 <input type="text" name="BurgerName" id="BurgerName">
+                 <input type="submit" name="NewBurger">
+             </form>
+         </div>
+     </div>
+ </div>
