@@ -12,6 +12,7 @@ app.use(express.static("public"));
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+let connection
 
 // connection
 if (process.env.JAWSDB_URL) {
@@ -68,7 +69,7 @@ app.post("/api/burger", (req, res) => {
         console.log(result);
         res.sendStatus(200)
     })
-})
+});
 
 app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT);
